@@ -1,5 +1,5 @@
 # General HTTP Handling
-This is my first repository
+A general HTTP handling tool
 
 * Dispatch handling request
 * JSON serialize/deserialize
