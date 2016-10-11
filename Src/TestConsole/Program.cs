@@ -33,6 +33,8 @@ function g() {
             Console.WriteLine(script.IndexOf(@"/*"));
             Match m = r.Match(script);
             Console.WriteLine(m.Value);
+
+            //TODO: how?
         }
     }
 }
