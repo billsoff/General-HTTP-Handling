@@ -1,6 +1,5 @@
-# hello-world
+# Script Service
 This is my first repository
-We need an easy method to interact with server!
 
 * JSON serialize/deserialize
 * Reflection
