@@ -6,3 +6,4 @@ A general HTTP handling tool
 * JSON serialize/deserialize
 * Reflection
 * JavaScript Promise/Deferred pattern to let code readable
+* JavaScript intelisense file automatic generating
