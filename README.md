@@ -2,7 +2,7 @@
 A general HTTP handling tool
 
 * Route handler for different purpose
-* Dispatch handling request
+* Dispatch service method request
 * JSON serialize/deserialize
 * Reflection
 * JavaScript Promise/Deferred pattern to let code readable
