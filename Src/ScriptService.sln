@@ -14,7 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{F284A0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{3776E3FE-EFB3-4249-84A4-5AA98956178C}"
 	ProjectSection(SolutionItems) = preProject
+		..\Doc\Design\Image\GeneralFlowChart-ComposeHandlerURL.PNG = ..\Doc\Design\Image\GeneralFlowChart-ComposeHandlerURL.PNG
+		..\Doc\Design\Image\GeneralFlowChart-RouteHandler.PNG = ..\Doc\Design\Image\GeneralFlowChart-RouteHandler.PNG
 		..\Doc\Design\Image\Package_Dependency.PNG = ..\Doc\Design\Image\Package_Dependency.PNG
+		..\Doc\Design\Image\Subpackages.PNG = ..\Doc\Design\Image\Subpackages.PNG
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{0E061C2B-1857-4CB6-9D39-994CF228F116}"

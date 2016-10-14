@@ -5,10 +5,58 @@
   <meta charset="utf-8" />
   <title>General HTTP Handling Remark</title>
   <style type="text/css">
+    body {
+      font-size: 16pt;
+      counter-reset: level1;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.4em;
+    }
+
+    h4 {
+      font-size: 1.3em;
+    }
+
+    h5 {
+      font-size: 1.2em;
+    }
+
+    h6 {
+      font-size: 1.1em;
+    }
+
     section, section > p {
       margin-left: 1.5em;
       margin-right: 2em;
     }
+
+      section.firstLevel {
+        counter-reset: level2;
+      }
+
+      section.secondLevel {
+        counter-reset: level3;
+      }
+
+      section.firstLevel > header > h4:before {
+        content: counter(level1) " ";
+        counter-increment: level1;
+      }
+
+      section.secondLevel > header > h5:before {
+        content: counter(level1) "." counter(level2) " ";
+        counter-increment: level2;
+      }
+
+      section.thirdLevel > header > h6:before {
+        content: counter(level1) "." counter(level2) "." counter(level3) " ";
+        counter-increment: level3;
+      }
   </style>
 </head>
 <body>
@@ -37,39 +85,54 @@
     <p>
       <a href="#Implementation">3. Implementation</a>
     </p>
+    <p>
+      <a href="#Reference">4. Reference</a>
+    </p>
     <hr />
   </section>
-  <section id="Analysis">
-    <h4>1. Analysis</h4>
+  <section id="Analysis" class="firstLevel">
+    <header>
+      <h4>Analysis</h4>
+    </header>
     <p>
       Now our system has many HTTP handlers to process multiple different requests. We can provide only one HTTP handler to process any type of requests by provide routing method. And when we want to call server method, we use different user defined protocol to design handler. So we need develop an engine to call the server method directly (all details (such as data serialization/deserialization, client asynchronous invoking &amp; callbacks etc.) should be encapsulated).
     </p>
-    <section>
-      <h5>1.1 Route Handling</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Route Handling</h5>
+      </header>
       <p>
         There should be routing method to process different requests.
       </p>
     </section>
-    <section>
-      <h5>1.2 Emit Script Service</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Emit Script Service</h5>
+      </header>
       <p>
         Frequent used client components should be reused easily. It can be combine to new apply by an easy method.
       </p>
     </section>
-    <section>
-      <h5>1.3 Call Service Method from Client</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Call Service Method from Client</h5>
+      </header>
       <p>
         This should be straightforward from client and server.
       </p>
     </section>
-    <section>
-      <h5>1.4 Generate Intellisense JavaScript Code for Corresponding Service Component</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Generate Intellisense JavaScript Code for Corresponding Service Component</h5>
+      </header>
       <p>
         Should provide a tool to generate the code to reference for intellisense.
       </p>
     </section>
-    <section>
-      <h5>1.5 Minimize JavaScript Code</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Minimize JavaScript Code</h5>
+      </header>
       <p>
         By configurable method to minimize the code.
       </p>
@@ -79,50 +142,139 @@
     </p>
     <hr />
   </section>
-  <section id="Design">
-    <h4>2. Design</h4>
-    <p>
-    </p>
-    <section>
-      <h5>2.1 Architecture</h5>
-      <section>
-        <h6>2.1.1 Package and Its Dependencies</h6>
+  <section id="Design" class="firstLevel">
+    <header>
+      <h4>Design</h4>
+    </header>
+    <section id="Design_Architeture" class="secondLevel">
+      <header>
+        <h5>Architecture</h5>
+      </header>
+      <section class="thirdLevel">
+        <header>
+          <h6>Package and Its Dependencies</h6>
+        </header>
         <p>
           All functions should be encapsulated into on package - GeneralHttpHandling. Its dependencies is as below:
-          <div>
-            <img src="Design/Image/Package_Dependency.PNG" alt="Package Dependency" width="500" />
-          </div>
+        </p>
+        <p>
+          <img src="Design/Image/Package_Dependency.PNG" alt="Package Dependency" width="500" />
+        </p>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Sub-Packages</h6>
+        </header>
+        <p>Main sub-packages and their dependencies:</p>
+        <p>
+          <img src="Design/Image/Subpackages.PNG" alt="Sub-Packages" width="300" />
         </p>
       </section>
     </section>
-    <section>
-      <h5>2.2 Conceptual</h5>
+    <section id="Design_General" class="secondLevel">
+      <header>
+        <h5>General</h5>
+      </header>
+      <section class="thirdLevel">
+        <header>
+          <h6>Handler Routing</h6>
+        </header>
+        <p>
+          The flow is as below:
+        </p>
+        <p>
+          <img src="Design/Image/GeneralFlowChart-RouteHandler.PNG" alt="Route Handler" width="500" />
+        </p>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Handler Request URL Composition</h6>
+        </header>
+        <p>
+          The flow is as below:
+        </p>
+        <p>
+          <img src="Design/Image/GeneralFlowChart-ComposeHandlerURL.PNG" alt="Compose Handler URL" width="400" />
+        </p>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Client Call to Service Component</h6>
+        </header>
+      </section>
     </section>
-    <section>
-      <h5>2.3 Detail</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Detail</h5>
+      </header>
     </section>
     <p style="text-align: center">
       <a href="#TOC">Table of Contents</a>
     </p>
     <hr />
   </section>
-  <section id="Implementation">
-    <h4>3. Implementation</h4>
-    <section>
-      <h5>3.1 Handler Routing</h5>
+  <section id="Implementation" class="firstLevel">
+    <header>
+      <h4>Implementation</h4>
+    </header>
+    <section class="secondLevel">
+      <header>
+        <h5>Handler Routing</h5>
+      </header>
     </section>
-    <section>
-      <h5>3.2 Script Service</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Script Service</h5>
+      </header>
     </section>
-    <section>
-      <h5>3.3 Call Service</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Call Service</h5>
+      </header>
     </section>
-    <section>
-      <h5>3.4 Generate Intellisense JavaScript Code</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Generate Intellisense JavaScript Code</h5>
+      </header>
     </section>
-    <section>
-      <h5>3.5 Minimize JavaScript Code</h5>
+    <section class="secondLevel">
+      <header>
+        <h5>Minimize JavaScript Code</h5>
+      </header>
     </section>
+    <p style="text-align: center">
+      <a href="#TOC">Table of Contents</a>
+    </p>
+    <hr />
+  </section>
+  <section id="Reference" class="firstLevel">
+    <header>
+      <h4>Reference</h4>
+    </header>
+    <ol type="a">
+      <li>
+        <a href="https://github.com/billsoff/General-HTTP-Handling" target="_blank">
+          This project on GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://developers.google.com/web/fundamentals/getting-started/primers/promises" target="_blank">JavaScript Promises: an Introduction</a>
+      </li>
+      <li>
+        <a href="http://api.jquery.com/category/deferred-object/" target="_blank">jQuery Deferred Object</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx" target="_blank">IHttpHandler Interface</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/library/bb385682(v=vs.120).aspx" target="_blank">JavaScript IntelliSense</a>
+      </li>
+      <li>
+        <a href="https://github.com/toptensoftware/MiniME" target="_blank">
+          Open source JavaScript Minimizer in C#
+        </a>
+      </li>
+    </ol>
     <p style="text-align: center">
       <a href="#TOC">Table of Contents</a>
     </p>
