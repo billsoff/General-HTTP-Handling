@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{3776E3FE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{0E061C2B-1857-4CB6-9D39-994CF228F116}"
 	ProjectSection(SolutionItems) = preProject
-		..\Doc\Design\Stuff\Handling_Desing.vsd = ..\Doc\Design\Stuff\Handling_Desing.vsd
+		..\Doc\Design\Stuff\Handling_Design.vsd = ..\Doc\Design\Stuff\Handling_Design.vsd
 	EndProjectSection
 EndProject
 Global
