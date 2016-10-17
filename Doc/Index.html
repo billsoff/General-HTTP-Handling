@@ -30,33 +30,77 @@
       font-size: 1.1em;
     }
 
-    section, section > p {
+    nav ul {
+      list-style-type: none;
+      line-height: 1.3em;
+    }
+
+    section, section > p, section > ol, section > ul {
       margin-left: 1.5em;
       margin-right: 2em;
     }
 
-      section.firstLevel {
-        counter-reset: level2;
+    nav.toc {
+      counter-reset: toc_level1;
+    }
+
+      nav.toc ul.firstLevel {
+        counter-reset: toc_level2;
       }
 
-      section.secondLevel {
-        counter-reset: level3;
+      nav.toc ul.secondLevel {
+        counter-reset: toc_level3;
       }
 
-      section.firstLevel > header > h4:before {
-        content: counter(level1) " ";
-        counter-increment: level1;
+      nav.toc ul.firstLevel > li > span:before {
+        content: counter(toc_level1);
+        counter-increment: toc_level1;
       }
 
-      section.secondLevel > header > h5:before {
-        content: counter(level1) "." counter(level2) " ";
-        counter-increment: level2;
+      nav.toc ul.secondLevel > li > span:before {
+        content: counter(toc_level1) "." counter(toc_level2);
+        counter-increment: toc_level2;
       }
 
-      section.thirdLevel > header > h6:before {
-        content: counter(level1) "." counter(level2) "." counter(level3) " ";
-        counter-increment: level3;
+      nav.toc ul.thirdLevel > li > span:before {
+        content: counter(toc_level1) "." counter(toc_level2) "." counter(toc_level3);
+        counter-increment: toc_level3;
       }
+
+    section.firstLevel {
+      counter-reset: level2;
+    }
+
+    section.secondLevel {
+      counter-reset: level3;
+    }
+
+    section.firstLevel > header > h4:before {
+      content: counter(level1) " ";
+      counter-increment: level1;
+    }
+
+    section.secondLevel > header > h5:before {
+      content: counter(level1) "." counter(level2) " ";
+      counter-increment: level2;
+    }
+
+    section.thirdLevel > header > h6:before {
+      content: counter(level1) "." counter(level2) "." counter(level3) " ";
+      counter-increment: level3;
+    }
+
+    #GoToTOC {
+      display: block;
+      position: fixed;
+      top: 50%;
+      right: 40px;
+      background: url(Common/Image/ImageSprite.png) no-repeat scroll -331px -3px;
+      background-color: rgba(0, 0, 0, 0);
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -76,20 +120,23 @@
   </section>
   <section id="TOC">
     <h3>Table of Contents</h3>
-    <p>
-      <a href="#Analysis">1. Analysis</a>
-    </p>
-    <p>
-      <a href="#Design">2. Design</a>
-    </p>
-    <p>
-      <a href="#Implementation">3. Implementation</a>
-    </p>
-    <p>
-      <a href="#Reference">4. Reference</a>
-    </p>
+    <nav class="toc">
+      <ul class="firstLevel">
+        <li>
+          <span></span> <a href="#Analysis">Analysis</a>
+          <ul class="secondLevel">
+            <li><span></span> <a href="#RouteHandling">Route Handling</a></li>
+            <li><span></span> <a href="#EmitScriptService">Emit Script Service</a></li>
+          </ul>
+        </li>
+        <li><span></span> <a href="#Design">Design</a></li>
+        <li><span></span> <a href="#Implementation">Implementation</a></li>
+        <li><span></span> <a href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
     <hr />
   </section>
+  <a id="GoToTOC" href="#TOC" title="Table of Contents" />
   <section id="Analysis" class="firstLevel">
     <header>
       <h4>Analysis</h4>
@@ -97,7 +144,7 @@
     <p>
       Now our system has many HTTP handlers to process multiple different requests. We can provide only one HTTP handler to process any type of requests by provide routing method. And when we want to call server method, we use different user defined protocol to design handler. So we need develop an engine to call the server method directly (all details (such as data serialization/deserialization, client asynchronous invoking &amp; callbacks etc.) should be encapsulated).
     </p>
-    <section class="secondLevel">
+    <section id="RouteHandling" class="secondLevel">
       <header>
         <h5>Route Handling</h5>
       </header>
@@ -105,7 +152,7 @@
         There should be routing method to process different requests.
       </p>
     </section>
-    <section class="secondLevel">
+    <section id="EmitScriptService" class="secondLevel">
       <header>
         <h5>Emit Script Service</h5>
       </header>
@@ -201,6 +248,16 @@
         <header>
           <h6>Client Call to Service Component</h6>
         </header>
+        <p>
+          <img src="Design/Image/GeneralFlowChart-CallServiceComponent.PNG" alt="Cient (Page) Call to Service Component" />
+        </p>
+        <p>
+          The call engine is responsible for:
+        </p>
+        <ul>
+          <li>Select service component method.</li>
+          <li>Serialize/Deserialize args &amp; result.</li>
+        </ul>
       </section>
     </section>
     <section class="secondLevel">

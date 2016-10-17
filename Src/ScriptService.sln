@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{F284A0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{3776E3FE-EFB3-4249-84A4-5AA98956178C}"
 	ProjectSection(SolutionItems) = preProject
+		..\Doc\Design\Image\GeneralFlowChart-CallServiceComponent.PNG = ..\Doc\Design\Image\GeneralFlowChart-CallServiceComponent.PNG
 		..\Doc\Design\Image\GeneralFlowChart-ComposeHandlerURL.PNG = ..\Doc\Design\Image\GeneralFlowChart-ComposeHandlerURL.PNG
 		..\Doc\Design\Image\GeneralFlowChart-RouteHandler.PNG = ..\Doc\Design\Image\GeneralFlowChart-RouteHandler.PNG
 		..\Doc\Design\Image\Package_Dependency.PNG = ..\Doc\Design\Image\Package_Dependency.PNG
@@ -23,6 +24,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{0E061C2B-1857-4CB6-9D39-994CF228F116}"
 	ProjectSection(SolutionItems) = preProject
 		..\Doc\Design\Stuff\Handling_Design.vsd = ..\Doc\Design\Stuff\Handling_Design.vsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D25C23AF-A950-4553-98C8-A53487842E56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{F1FA2B86-D896-408E-A156-EEF71D4F58EF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Doc\Common\Image\ImageSprite.png = ..\Doc\Common\Image\ImageSprite.png
 	EndProjectSection
 EndProject
 Global
@@ -43,5 +51,7 @@ Global
 		{F284A04A-2442-4CBD-A6BE-C7D08D92BD0D} = {09966C65-3C23-4312-B09F-9FF110724E45}
 		{3776E3FE-EFB3-4249-84A4-5AA98956178C} = {F284A04A-2442-4CBD-A6BE-C7D08D92BD0D}
 		{0E061C2B-1857-4CB6-9D39-994CF228F116} = {F284A04A-2442-4CBD-A6BE-C7D08D92BD0D}
+		{D25C23AF-A950-4553-98C8-A53487842E56} = {09966C65-3C23-4312-B09F-9FF110724E45}
+		{F1FA2B86-D896-408E-A156-EEF71D4F58EF} = {D25C23AF-A950-4553-98C8-A53487842E56}
 	EndGlobalSection
 EndGlobal
