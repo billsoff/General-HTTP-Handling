@@ -35,6 +35,10 @@
       line-height: 1.3em;
     }
 
+    nav :link, nav :visited {
+      text-decoration: none;
+    }
+
     section, section > p, section > ol, section > ul {
       margin-left: 1.5em;
       margin-right: 2em;
@@ -48,28 +52,28 @@
       color: blue;
     }
 
-      nav.toc ul.secondLevel {
-        counter-reset: toc_level2;
-      }
+    nav.toc ul.secondLevel {
+      counter-reset: toc_level2;
+    }
 
-      nav.toc ul.thirdLevel {
-        counter-reset: toc_level3;
-      }
+    nav.toc ul.thirdLevel {
+      counter-reset: toc_level3;
+    }
 
-      nav.toc ul.firstLevel > li > span:before {
-        content: counter(toc_level1);
-        counter-increment: toc_level1;
-      }
+    nav.toc ul.firstLevel > li > span:before {
+      content: counter(toc_level1);
+      counter-increment: toc_level1;
+    }
 
-      nav.toc ul.secondLevel > li > span:before {
-        content: counter(toc_level1) "." counter(toc_level2);
-        counter-increment: toc_level2;
-      }
+    nav.toc ul.secondLevel > li > span:before {
+      content: counter(toc_level1) "." counter(toc_level2);
+      counter-increment: toc_level2;
+    }
 
-      nav.toc ul.thirdLevel > li > span:before {
-        content: counter(toc_level1) "." counter(toc_level2) "." counter(toc_level3);
-        counter-increment: toc_level3;
-      }
+    nav.toc ul.thirdLevel > li > span:before {
+      content: counter(toc_level1) "." counter(toc_level2) "." counter(toc_level3);
+      counter-increment: toc_level3;
+    }
 
     section.firstLevel {
       counter-reset: level2;
@@ -97,13 +101,15 @@
     #GoToTOC {
       display: block;
       position: fixed;
-      top: 50%;
+      top: 90%;
       left: 5px;
       background: url(Common/Image/ImageSprite.png) no-repeat scroll -331px -3px;
       background-color: rgba(0, 0, 0, 0);
       width: 40px;
       height: 40px;
       overflow: hidden;
+      opacity: 0.6;
+      z-index: 1000;
     }
   </style>
 </head>
