@@ -44,11 +44,15 @@
       counter-reset: toc_level1;
     }
 
-      nav.toc ul.firstLevel {
+    nav a:visited {
+      color: blue;
+    }
+
+      nav.toc ul.secondLevel {
         counter-reset: toc_level2;
       }
 
-      nav.toc ul.secondLevel {
+      nav.toc ul.thirdLevel {
         counter-reset: toc_level3;
       }
 
@@ -94,7 +98,7 @@
       display: block;
       position: fixed;
       top: 50%;
-      right: 40px;
+      left: 5px;
       background: url(Common/Image/ImageSprite.png) no-repeat scroll -331px -3px;
       background-color: rgba(0, 0, 0, 0);
       width: 40px;
@@ -127,16 +131,49 @@
           <ul class="secondLevel">
             <li><span></span> <a href="#RouteHandling">Route Handling</a></li>
             <li><span></span> <a href="#EmitScriptService">Emit Script Service</a></li>
+            <li><span></span> <a href="#CallServiceFromClient">Call Service Method from Client</a></li>
+            <li><span></span> <a href="#GenerateJSIntellisense">Generate Intellisense JavaScript Code for Corresponding Service Component</a></li>
+            <li><span></span> <a href="#JSMinifier">Minimize JavaScript Code</a></li>
           </ul>
         </li>
-        <li><span></span> <a href="#Design">Design</a></li>
-        <li><span></span> <a href="#Implementation">Implementation</a></li>
-        <li><span></span> <a href="#Reference">Reference</a></li>
+        <li class="firstLevel">
+          <span></span> <a href="#Design">Design</a>
+          <ul class="secondLevel">
+            <li>
+              <span></span> <a href="#Design_Architeture">Architecture</a>
+              <ul class="thirdLevel">
+                <li><span></span> <a href="#Design_Architecture_PackageDependencies">Package and Its Dependencies</a></li>
+                <li><span></span> <a href="#Design_Architectur_SubPackages">Packages</a></li>
+              </ul>
+            </li>
+            <li>
+              <span></span> <a href="#Design_General">General</a>
+              <ul class="thirdLevel">
+                <li><span></span> <a href="#Design_General_HandlerRouting">Handler Routing</a></li>
+                <li><span></span> <a href="#Design_General_HandlerRequestURLComposition">Handler Request URL Composition</a></li>
+                <li><span></span> <a href="#Design_General_CallServiceComponent">Client Call to Service Component</a></li>
+              </ul>
+            </li>
+            <li>
+              <span></span> <a href="#Design_Detail">Detail</a>
+            </li>
+          </ul>
+        </li>
+        <li class="firstLevel">
+          <span></span> <a href="#Implementation">Implementation</a>
+          <ul class="secondLevel">
+            <li><span></span> <a href="#ImplHandlerRouting">Handler Routing</a></li>
+            <li><span></span> <a href="#ImplScriptService">Script Service</a></li>
+            <li><span></span> <a href="#ImplCallService">Call Service</a></li>
+            <li><span></span> <a href="#ImplGenerateIntellisenceJS">Generate Intellisense JavaScript Code</a></li>
+            <li><span></span> <a href="#ImplMinifier">Minimize JavaScript Code</a></li>
+          </ul>
+        </li>
+        <li class="firstLevel"><span></span> <a href="#Reference">Reference</a></li>
       </ul>
     </nav>
     <hr />
   </section>
-  <a id="GoToTOC" href="#TOC" title="Table of Contents" />
   <section id="Analysis" class="firstLevel">
     <header>
       <h4>Analysis</h4>
@@ -160,7 +197,7 @@
         Frequent used client components should be reused easily. It can be combine to new apply by an easy method.
       </p>
     </section>
-    <section class="secondLevel">
+    <section id="CallServiceFromClient" class="secondLevel">
       <header>
         <h5>Call Service Method from Client</h5>
       </header>
@@ -168,7 +205,7 @@
         This should be straightforward from client and server.
       </p>
     </section>
-    <section class="secondLevel">
+    <section id="GenerateJSIntellisense" class="secondLevel">
       <header>
         <h5>Generate Intellisense JavaScript Code for Corresponding Service Component</h5>
       </header>
@@ -176,7 +213,7 @@
         Should provide a tool to generate the code to reference for intellisense.
       </p>
     </section>
-    <section class="secondLevel">
+    <section id="JSMinifier" class="secondLevel">
       <header>
         <h5>Minimize JavaScript Code</h5>
       </header>
@@ -184,9 +221,6 @@
         By configurable method to minimize the code.
       </p>
     </section>
-    <p style="text-align: center">
-      <a href="#TOC">Table of Contents</a>
-    </p>
     <hr />
   </section>
   <section id="Design" class="firstLevel">
@@ -197,7 +231,7 @@
       <header>
         <h5>Architecture</h5>
       </header>
-      <section class="thirdLevel">
+      <section id="Design_Architecture_PackageDependencies" class="thirdLevel">
         <header>
           <h6>Package and Its Dependencies</h6>
         </header>
@@ -208,7 +242,7 @@
           <img src="Design/Image/Package_Dependency.PNG" alt="Package Dependency" width="500" />
         </p>
       </section>
-      <section class="thirdLevel">
+      <section id="Design_Architectur_SubPackages" class="thirdLevel">
         <header>
           <h6>Sub-Packages</h6>
         </header>
@@ -222,7 +256,7 @@
       <header>
         <h5>General</h5>
       </header>
-      <section class="thirdLevel">
+      <section id="Design_General_HandlerRouting" class="thirdLevel">
         <header>
           <h6>Handler Routing</h6>
         </header>
@@ -233,7 +267,7 @@
           <img src="Design/Image/GeneralFlowChart-RouteHandler.PNG" alt="Route Handler" width="500" />
         </p>
       </section>
-      <section class="thirdLevel">
+      <section id="Design_General_HandlerRequestURLComposition" class="thirdLevel">
         <header>
           <h6>Handler Request URL Composition</h6>
         </header>
@@ -244,7 +278,7 @@
           <img src="Design/Image/GeneralFlowChart-ComposeHandlerURL.PNG" alt="Compose Handler URL" width="400" />
         </p>
       </section>
-      <section class="thirdLevel">
+      <section id="Design_General_CallServiceComponent" class="thirdLevel">
         <header>
           <h6>Client Call to Service Component</h6>
         </header>
@@ -260,48 +294,42 @@
         </ul>
       </section>
     </section>
-    <section class="secondLevel">
+    <section id="Design_Detail" class="secondLevel">
       <header>
         <h5>Detail</h5>
       </header>
     </section>
-    <p style="text-align: center">
-      <a href="#TOC">Table of Contents</a>
-    </p>
     <hr />
   </section>
   <section id="Implementation" class="firstLevel">
     <header>
       <h4>Implementation</h4>
     </header>
-    <section class="secondLevel">
+    <section id="ImplHandlerRouting" class="secondLevel">
       <header>
         <h5>Handler Routing</h5>
       </header>
     </section>
-    <section class="secondLevel">
+    <section id="ImplScriptService" class="secondLevel">
       <header>
         <h5>Script Service</h5>
       </header>
     </section>
-    <section class="secondLevel">
+    <section id="ImplCallService" class="secondLevel">
       <header>
         <h5>Call Service</h5>
       </header>
     </section>
-    <section class="secondLevel">
+    <section id="ImplGenerateIntellisenceJS" class="secondLevel">
       <header>
         <h5>Generate Intellisense JavaScript Code</h5>
       </header>
     </section>
-    <section class="secondLevel">
+    <section id="ImplMinifier" class="secondLevel">
       <header>
         <h5>Minimize JavaScript Code</h5>
       </header>
     </section>
-    <p style="text-align: center">
-      <a href="#TOC">Table of Contents</a>
-    </p>
     <hr />
   </section>
   <section id="Reference" class="firstLevel">
@@ -332,10 +360,8 @@
         </a>
       </li>
     </ol>
-    <p style="text-align: center">
-      <a href="#TOC">Table of Contents</a>
-    </p>
     <hr />
   </section>
+  <a id="GoToTOC" href="#TOC" title="Table of Contents" />
 </body>
 </html>
