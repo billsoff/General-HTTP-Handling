@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <title>General HTTP Handling Remark</title>
+  <link rel="stylesheet" type="text/css" href="Common/SH/styles/shCore.css" />
+  <link rel="stylesheet" type="text/css" href="Common/SH/styles/shCoreDefault.css" />
+  <script type="text/javascript" src="Common/SH/scripts/shCore.js"></script>
+  <script type="text/javascript" src="Common/SH/scripts/shBrushCSharp.js"></script>
+  <script type="text/javascript" src="Common/SH/scripts/shBrushJScript.js"></script>
   <style type="text/css">
     body {
       font-size: 16pt;
@@ -155,6 +160,9 @@
             </li>
             <li>
               <span></span> <a href="#Design_Detail">Detail</a>
+              <ul class="thirdLevel">
+                <li><span></span> <a href="#Design_Detail_Vocabulary">Vocabulary</a></li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -316,6 +324,50 @@
       <header>
         <h5>Detail</h5>
       </header>
+      <section id="Design_Detail_Vocabulary" class="thirdLevel">
+        <header>
+          <h6>Vocabulary</h6>
+        </header>
+        <ol type="a">
+          <li>HandlerRouteManager</li>
+          <li>
+            GeneralHttpHandlerSection
+            <p>Configuration section for HTTP handlers.</p>
+          </li>
+          <li>ScriptService</li>
+        </ol>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Handler Route Name Specification</h6>
+        </header>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>JSON serialization/deserialization</h6>
+        </header>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Asynchronous Service Components Call</h6>
+        </header>
+        <ol type="a">
+          <li>
+            Methods overload rule
+          </li>
+          <li>
+            Client call mode
+            <p>
+              Client adopt Deferred/Promise pattern to call service components.
+            </p>
+          </li>
+        </ol>
+      </section>
+      <section class="thirdLevel">
+        <header>
+          <h6>Script Service Re</h6>
+        </header>
+      </section>
     </section>
     <hr />
   </section>
@@ -377,9 +429,43 @@
           Open source JavaScript Minimizer in C#
         </a>
       </li>
+      <li>
+        <a href="http://alexgorbatchev.com/SyntaxHighlighter/" target="_blank">
+          SyntaxHighlighter 3.0.83
+        </a>
+      </li>
     </ol>
     <hr />
   </section>
+  <pre class="brush: javascript; highlight: [3, 4]" id="thisJS">
+function main(context) {
+  context.dataService
+         .getRecordById('contracts', 3)
+         .then(function (contract) {
+         });
+}
+  </pre>
+  <script type="text/javascript">
+    //SyntaxHighlighter.highlight(null, document.getElementById('thisJS'));
+  </script>
+  <pre class="brush: csharp; highlight:[29]; first-line:25;" id="theCSharp">
+            string result;
+            try
+            {
+                object returnValue = DoExecute(context, type, paramStr);
+                ExecutionResult wrapper = new ExecutionResult(new ReturnValueWrapper(returnValue));
+                result = wrapper.Serialize();
+            }
+            catch (Exception ex)
+            {
+                ExecutionResult wrpper = new ExecutionResult(new Error(ex));
+                result = wrpper.Serialize();
+            }
+  </pre>
+  <script type="text/javascript">
+    //SyntaxHighlighter.highlight(null, document.getElementById('theCSharp'));
+    SyntaxHighlighter.all();
+  </script>
   <a id="GoToTOC" href="#TOC" title="Table of Contents" />
 </body>
 </html>

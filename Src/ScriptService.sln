@@ -33,6 +33,61 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{F1FA2B86
 		..\Doc\Common\Image\ImageSprite.png = ..\Doc\Common\Image\ImageSprite.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SH", "SH", "{1A549C36-1DDD-42EF-887B-7E9F20DF2CC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Style", "Style", "{F0FA496F-0406-467B-925C-115C88FF832E}"
+	ProjectSection(SolutionItems) = preProject
+		..\Doc\Common\SH\styles\shCore.css = ..\Doc\Common\SH\styles\shCore.css
+		..\Doc\Common\SH\styles\shCoreDefault.css = ..\Doc\Common\SH\styles\shCoreDefault.css
+		..\Doc\Common\SH\styles\shCoreDjango.css = ..\Doc\Common\SH\styles\shCoreDjango.css
+		..\Doc\Common\SH\styles\shCoreEclipse.css = ..\Doc\Common\SH\styles\shCoreEclipse.css
+		..\Doc\Common\SH\styles\shCoreEmacs.css = ..\Doc\Common\SH\styles\shCoreEmacs.css
+		..\Doc\Common\SH\styles\shCoreFadeToGrey.css = ..\Doc\Common\SH\styles\shCoreFadeToGrey.css
+		..\Doc\Common\SH\styles\shCoreMDUltra.css = ..\Doc\Common\SH\styles\shCoreMDUltra.css
+		..\Doc\Common\SH\styles\shCoreMidnight.css = ..\Doc\Common\SH\styles\shCoreMidnight.css
+		..\Doc\Common\SH\styles\shCoreRDark.css = ..\Doc\Common\SH\styles\shCoreRDark.css
+		..\Doc\Common\SH\styles\shThemeDefault.css = ..\Doc\Common\SH\styles\shThemeDefault.css
+		..\Doc\Common\SH\styles\shThemeDjango.css = ..\Doc\Common\SH\styles\shThemeDjango.css
+		..\Doc\Common\SH\styles\shThemeEclipse.css = ..\Doc\Common\SH\styles\shThemeEclipse.css
+		..\Doc\Common\SH\styles\shThemeEmacs.css = ..\Doc\Common\SH\styles\shThemeEmacs.css
+		..\Doc\Common\SH\styles\shThemeFadeToGrey.css = ..\Doc\Common\SH\styles\shThemeFadeToGrey.css
+		..\Doc\Common\SH\styles\shThemeMDUltra.css = ..\Doc\Common\SH\styles\shThemeMDUltra.css
+		..\Doc\Common\SH\styles\shThemeMidnight.css = ..\Doc\Common\SH\styles\shThemeMidnight.css
+		..\Doc\Common\SH\styles\shThemeRDark.css = ..\Doc\Common\SH\styles\shThemeRDark.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{C912C419-3DF9-4776-B3B1-6498053BFBD9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Doc\Common\SH\scripts\shAutoloader.js = ..\Doc\Common\SH\scripts\shAutoloader.js
+		..\Doc\Common\SH\scripts\shBrushAppleScript.js = ..\Doc\Common\SH\scripts\shBrushAppleScript.js
+		..\Doc\Common\SH\scripts\shBrushAS3.js = ..\Doc\Common\SH\scripts\shBrushAS3.js
+		..\Doc\Common\SH\scripts\shBrushBash.js = ..\Doc\Common\SH\scripts\shBrushBash.js
+		..\Doc\Common\SH\scripts\shBrushColdFusion.js = ..\Doc\Common\SH\scripts\shBrushColdFusion.js
+		..\Doc\Common\SH\scripts\shBrushCpp.js = ..\Doc\Common\SH\scripts\shBrushCpp.js
+		..\Doc\Common\SH\scripts\shBrushCSharp.js = ..\Doc\Common\SH\scripts\shBrushCSharp.js
+		..\Doc\Common\SH\scripts\shBrushCss.js = ..\Doc\Common\SH\scripts\shBrushCss.js
+		..\Doc\Common\SH\scripts\shBrushDelphi.js = ..\Doc\Common\SH\scripts\shBrushDelphi.js
+		..\Doc\Common\SH\scripts\shBrushDiff.js = ..\Doc\Common\SH\scripts\shBrushDiff.js
+		..\Doc\Common\SH\scripts\shBrushErlang.js = ..\Doc\Common\SH\scripts\shBrushErlang.js
+		..\Doc\Common\SH\scripts\shBrushGroovy.js = ..\Doc\Common\SH\scripts\shBrushGroovy.js
+		..\Doc\Common\SH\scripts\shBrushJava.js = ..\Doc\Common\SH\scripts\shBrushJava.js
+		..\Doc\Common\SH\scripts\shBrushJavaFX.js = ..\Doc\Common\SH\scripts\shBrushJavaFX.js
+		..\Doc\Common\SH\scripts\shBrushJScript.js = ..\Doc\Common\SH\scripts\shBrushJScript.js
+		..\Doc\Common\SH\scripts\shBrushPerl.js = ..\Doc\Common\SH\scripts\shBrushPerl.js
+		..\Doc\Common\SH\scripts\shBrushPhp.js = ..\Doc\Common\SH\scripts\shBrushPhp.js
+		..\Doc\Common\SH\scripts\shBrushPlain.js = ..\Doc\Common\SH\scripts\shBrushPlain.js
+		..\Doc\Common\SH\scripts\shBrushPowerShell.js = ..\Doc\Common\SH\scripts\shBrushPowerShell.js
+		..\Doc\Common\SH\scripts\shBrushPython.js = ..\Doc\Common\SH\scripts\shBrushPython.js
+		..\Doc\Common\SH\scripts\shBrushRuby.js = ..\Doc\Common\SH\scripts\shBrushRuby.js
+		..\Doc\Common\SH\scripts\shBrushSass.js = ..\Doc\Common\SH\scripts\shBrushSass.js
+		..\Doc\Common\SH\scripts\shBrushScala.js = ..\Doc\Common\SH\scripts\shBrushScala.js
+		..\Doc\Common\SH\scripts\shBrushSql.js = ..\Doc\Common\SH\scripts\shBrushSql.js
+		..\Doc\Common\SH\scripts\shBrushVb.js = ..\Doc\Common\SH\scripts\shBrushVb.js
+		..\Doc\Common\SH\scripts\shBrushXml.js = ..\Doc\Common\SH\scripts\shBrushXml.js
+		..\Doc\Common\SH\scripts\shCore.js = ..\Doc\Common\SH\scripts\shCore.js
+		..\Doc\Common\SH\scripts\shLegacy.js = ..\Doc\Common\SH\scripts\shLegacy.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +108,8 @@ Global
 		{0E061C2B-1857-4CB6-9D39-994CF228F116} = {F284A04A-2442-4CBD-A6BE-C7D08D92BD0D}
 		{D25C23AF-A950-4553-98C8-A53487842E56} = {09966C65-3C23-4312-B09F-9FF110724E45}
 		{F1FA2B86-D896-408E-A156-EEF71D4F58EF} = {D25C23AF-A950-4553-98C8-A53487842E56}
+		{1A549C36-1DDD-42EF-887B-7E9F20DF2CC8} = {D25C23AF-A950-4553-98C8-A53487842E56}
+		{F0FA496F-0406-467B-925C-115C88FF832E} = {1A549C36-1DDD-42EF-887B-7E9F20DF2CC8}
+		{C912C419-3DF9-4776-B3B1-6498053BFBD9} = {1A549C36-1DDD-42EF-887B-7E9F20DF2CC8}
 	EndGlobalSection
 EndGlobal
