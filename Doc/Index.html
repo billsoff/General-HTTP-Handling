@@ -4,123 +4,16 @@
 <head>
   <meta charset="utf-8" />
   <title>General HTTP Handling Remark</title>
+  <link rel="stylesheet" type="text/css" href="Common/Index.css" />
   <link rel="stylesheet" type="text/css" href="Common/SH/styles/shCore.css" />
-  <link rel="stylesheet" type="text/css" href="Common/SH/styles/shCoreDefault.css" />
+  <link rel="stylesheet" type="text/css" href="Common/SH/styles/shCoreDefault.css" data-theme="Default" />
+  <link rel="stylesheet" type="text/css" href="Common/SH/styles/shThemeDefault.css" data-theme="Default" />
+  <script type="text/javascript" src="Common/Script/jQuery/jquery-3.1.1.js"></script>
   <script type="text/javascript" src="Common/SH/scripts/shCore.js"></script>
-  <script type="text/javascript" src="Common/SH/scripts/shBrushCSharp.js"></script>
   <script type="text/javascript" src="Common/SH/scripts/shBrushJScript.js"></script>
-  <style type="text/css">
-    body {
-      font-size: 16pt;
-      counter-reset: level1;
-    }
-
-    h2 {
-      font-size: 1.5em;
-    }
-
-    h3 {
-      font-size: 1.4em;
-    }
-
-    h4 {
-      font-size: 1.3em;
-    }
-
-    h5 {
-      font-size: 1.2em;
-    }
-
-    h6 {
-      font-size: 1.1em;
-    }
-
-    nav ul {
-      list-style-type: none;
-      line-height: 1.3em;
-    }
-
-    nav :link, nav :visited {
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section, section > p, section > ol, section > ul {
-      margin-left: 1.5em;
-      margin-right: 2em;
-    }
-
-    nav.toc {
-      counter-reset: toc_level1;
-    }
-
-    nav a:visited {
-      color: blue;
-    }
-
-    nav.toc ul.secondLevel {
-      counter-reset: toc_level2;
-    }
-
-    nav.toc ul.thirdLevel {
-      counter-reset: toc_level3;
-    }
-
-    nav.toc ul.firstLevel > li > span:before {
-      content: counter(toc_level1);
-      counter-increment: toc_level1;
-    }
-
-    nav.toc ul.secondLevel > li > span:before {
-      content: counter(toc_level1) "." counter(toc_level2);
-      counter-increment: toc_level2;
-    }
-
-    nav.toc ul.thirdLevel > li > span:before {
-      content: counter(toc_level1) "." counter(toc_level2) "." counter(toc_level3);
-      counter-increment: toc_level3;
-    }
-
-    section.firstLevel {
-      counter-reset: level2;
-    }
-
-    section.secondLevel {
-      counter-reset: level3;
-    }
-
-    section.firstLevel > header > h4:before {
-      content: counter(level1) " ";
-      counter-increment: level1;
-    }
-
-    section.secondLevel > header > h5:before {
-      content: counter(level1) "." counter(level2) " ";
-      counter-increment: level2;
-    }
-
-    section.thirdLevel > header > h6:before {
-      content: counter(level1) "." counter(level2) "." counter(level3) " ";
-      counter-increment: level3;
-    }
-
-    #GoToTOC {
-      display: block;
-      position: fixed;
-      top: 70%;
-      left: 5px;
-      background: url(Common/Image/ImageSprite.png) no-repeat scroll -331px -3px;
-      background-color: rgba(0, 0, 0, 0);
-      width: 40px;
-      height: 40px;
-      overflow: hidden;
-      opacity: 0.6;
-      z-index: 1000;
-    }
-  </style>
+  <script type="text/javascript" src="Common/SH/scripts/shBrushCSharp.js"></script>
+  <script type="text/javascript" src="Common/SH/scripts/shBrushSql.js"></script>
+  <script type="text/javascript" src="Common/Script/Index.js"></script>
 </head>
 <body>
   <h2 style="text-align: center;">General HTTP Handling Remark</h2>
@@ -329,12 +222,54 @@
           <h6>Vocabulary</h6>
         </header>
         <ol type="a">
-          <li>HandlerRouteManager</li>
           <li>
-            GeneralHttpHandlerSection
-            <p>Configuration section for HTTP handlers.</p>
+            <dl>
+              <dt>HandlerRouteManager</dt>
+              <dd>Responsible for route handler; generate handling URL.</dd>
+            </dl>
           </li>
-          <li>ScriptService</li>
+          <li>
+            <dl>
+              <dt>GeneralHttpHandlerSection</dt>
+              <dd>Configuration section for HTTP handlers.</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>WorkerHandler</dt>
+              <dd>Worker handler that processes the request.</dd>
+              <dd>Route parameter: _action</dd>
+              <dd>HTTP method</dd>
+              <dd>Additional input parameters (including form data)</dd>
+              <dd>Determine whether support session</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>ScriptService</dt>
+              <dd>Script service modules can be easily composed to a module, then the specified task can be completed.</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>ServiceComponentScriptService</dt>
+              <dd>A script service that can call the specified service component (service component wrapper).</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>TypeResolver</dt>
+              <dd>When instantiates a worker handler or service component, if its type cannot be resolved according to .NET locating path, the consumer can use the resolver to locate the type.</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>ServiceComponentMethodSelector</dt>
+              <dd>
+                Select appropriate method of service component to execute from the client call.
+              </dd>
+            </dl>
+          </li>
         </ol>
       </section>
       <section class="thirdLevel">
@@ -409,29 +344,37 @@
     <ol type="a">
       <li>
         <a href="https://github.com/billsoff/General-HTTP-Handling" target="_blank">
-          This project on GitHub
+          <cite>This project on GitHub</cite>
         </a>
       </li>
       <li>
-        <a href="https://developers.google.com/web/fundamentals/getting-started/primers/promises" target="_blank">JavaScript Promises: an Introduction</a>
+        <a href="https://developers.google.com/web/fundamentals/getting-started/primers/promises" target="_blank">
+          <cite>Promises: an Introduction</cite>
+        </a>
       </li>
       <li>
-        <a href="http://api.jquery.com/category/deferred-object/" target="_blank">jQuery Deferred Object</a>
+        <a href="http://api.jquery.com/category/deferred-object/" target="_blank">
+          <cite>Deferred Object</cite>
+        </a>
       </li>
       <li>
-        <a href="https://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx" target="_blank">IHttpHandler Interface</a>
+        <a href="https://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx" target="_blank">
+          <cite>IHttpHandler Interface</cite>
+        </a>
       </li>
       <li>
-        <a href="https://msdn.microsoft.com/en-us/library/bb385682(v=vs.120).aspx" target="_blank">JavaScript IntelliSense</a>
+        <a href="https://msdn.microsoft.com/en-us/library/bb385682(v=vs.120).aspx" target="_blank">
+          <cite>JavaScript IntelliSense</cite>
+        </a>
       </li>
       <li>
         <a href="https://github.com/toptensoftware/MiniME" target="_blank">
-          Open source JavaScript Minimizer in C#
+          <cite>Open source JavaScript Minimizer in C#</cite>
         </a>
       </li>
       <li>
         <a href="http://alexgorbatchev.com/SyntaxHighlighter/" target="_blank">
-          SyntaxHighlighter 3.0.83
+          <cite>SyntaxHighlighter 3.0.83</cite>
         </a>
       </li>
     </ol>
@@ -445,10 +388,24 @@ function main(context) {
          });
 }
   </pre>
-  <script type="text/javascript">
-    //SyntaxHighlighter.highlight(null, document.getElementById('thisJS'));
-  </script>
-  <pre class="brush: csharp; highlight:[29]; first-line:25;" id="theCSharp">
+  <pre class="brush: javascript; html-script: false;">
+/// &lt;reference path="SomeComponent.h.js" /&gt;
+// the first function is treated as service
+function main(context) {
+    return new MyService(context);
+}
+// here can write any code
+function MyService(context) {
+    this.context = context;
+}
+MyService.prototype = {
+    context: null,
+    exec: function () {
+    }
+};
+  </pre>
+  <pre class="brush: csharp; highlight:[29]; first-line:25; gutter:true;" id="theCSharp">
+            int line = 3;
             string result;
             try
             {
@@ -458,12 +415,25 @@ function main(context) {
             }
             catch (Exception ex)
             {
-                ExecutionResult wrpper = new ExecutionResult(new Error(ex));
-                result = wrpper.Serialize();
+                ExecutionResult wrapper = new ExecutionResult(new Error(ex));
+                result = wrapper.Serialize();
             }
   </pre>
+  <hr />
+  <section style="text-align: right;">
+    Theme:
+    <select id="shTheme">
+      <option value="Default" selected>Default</option>
+      <option value="Django">Django</option>
+      <option value="Eclipse">Eclipse</option>
+      <option value="Emacs">Emacs</option>
+      <option value="FadeToGrey">FadeToGrey</option>
+      <option value="MDUltra">MDUltra</option>
+      <option value="Midnight">Midnight</option>
+      <option value="RDark">RDark</option>
+    </select>
+  </section>
   <script type="text/javascript">
-    //SyntaxHighlighter.highlight(null, document.getElementById('theCSharp'));
     SyntaxHighlighter.all();
   </script>
   <a id="GoToTOC" href="#TOC" title="Table of Contents" />

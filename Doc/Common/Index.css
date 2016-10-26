@@ -1,0 +1,110 @@
+﻿body {
+    font-size: 16pt;
+    counter-reset: level1;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.1em;
+}
+
+nav ul {
+    list-style-type: none;
+    line-height: 1.3em;
+}
+
+nav :link, nav :visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section, section > p, section > ol, section > ul {
+    margin-left: 1.5em;
+    margin-right: 2em;
+}
+
+nav.toc {
+    counter-reset: toc_level1;
+}
+
+nav a:visited {
+    color: blue;
+}
+
+nav.toc ul.secondLevel {
+    counter-reset: toc_level2;
+}
+
+nav.toc ul.thirdLevel {
+    counter-reset: toc_level3;
+}
+
+nav.toc ul.firstLevel > li > span:before {
+    content: counter(toc_level1);
+    counter-increment: toc_level1;
+}
+
+nav.toc ul.secondLevel > li > span:before {
+    content: counter(toc_level1) "." counter(toc_level2);
+    counter-increment: toc_level2;
+}
+
+nav.toc ul.thirdLevel > li > span:before {
+    content: counter(toc_level1) "." counter(toc_level2) "." counter(toc_level3);
+    counter-increment: toc_level3;
+}
+
+section.firstLevel {
+    counter-reset: level2;
+}
+
+section.secondLevel {
+    counter-reset: level3;
+}
+
+section.firstLevel > header > h4:before {
+    content: counter(level1) " ";
+    counter-increment: level1;
+}
+
+section.secondLevel > header > h5:before {
+    content: counter(level1) "." counter(level2) " ";
+    counter-increment: level2;
+}
+
+section.thirdLevel > header > h6:before {
+    content: counter(level1) "." counter(level2) "." counter(level3) " ";
+    counter-increment: level3;
+}
+
+#GoToTOC {
+    display: block;
+    position: fixed;
+    top: 70%;
+    left: 5px;
+    background: url(Image/ImageSprite.png) no-repeat scroll -331px -3px;
+    background-color: rgba(0, 0, 0, 0);
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    opacity: 0.6;
+    z-index: 1000;
+}

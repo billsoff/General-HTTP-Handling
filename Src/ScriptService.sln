@@ -27,6 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stuff", "Stuff", "{0E061C2B
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D25C23AF-A950-4553-98C8-A53487842E56}"
+	ProjectSection(SolutionItems) = preProject
+		..\Doc\Common\Index.css = ..\Doc\Common\Index.css
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{F1FA2B86-D896-408E-A156-EEF71D4F58EF}"
 	ProjectSection(SolutionItems) = preProject
@@ -88,6 +91,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{C912C4
 		..\Doc\Common\SH\scripts\shLegacy.js = ..\Doc\Common\SH\scripts\shLegacy.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{F194E87D-5260-4BAA-AFEC-9378C293ED92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "jQuery", "jQuery", "{E0E055E7-4D0E-402B-B7BB-94C76CCFC438}"
+	ProjectSection(SolutionItems) = preProject
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.intellisense.js = ..\Doc\Common\Script\jQuery\jquery-3.1.1.intellisense.js
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.js = ..\Doc\Common\Script\jQuery\jquery-3.1.1.js
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.min.js = ..\Doc\Common\Script\jQuery\jquery-3.1.1.min.js
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.min.map = ..\Doc\Common\Script\jQuery\jquery-3.1.1.min.map
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.js = ..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.js
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.min.js = ..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.min.js
+		..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.min.map = ..\Doc\Common\Script\jQuery\jquery-3.1.1.slim.min.map
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,5 +127,7 @@ Global
 		{1A549C36-1DDD-42EF-887B-7E9F20DF2CC8} = {D25C23AF-A950-4553-98C8-A53487842E56}
 		{F0FA496F-0406-467B-925C-115C88FF832E} = {1A549C36-1DDD-42EF-887B-7E9F20DF2CC8}
 		{C912C419-3DF9-4776-B3B1-6498053BFBD9} = {1A549C36-1DDD-42EF-887B-7E9F20DF2CC8}
+		{F194E87D-5260-4BAA-AFEC-9378C293ED92} = {D25C23AF-A950-4553-98C8-A53487842E56}
+		{E0E055E7-4D0E-402B-B7BB-94C76CCFC438} = {F194E87D-5260-4BAA-AFEC-9378C293ED92}
 	EndGlobalSection
 EndGlobal
